@@ -86,7 +86,6 @@ public class WorkLogManager {
 		userStory.addTask(issue);
 		userStory.addTask(issue2);
 
-
 		WorkLogManager.saveEntity(project);
 	}
 
@@ -103,11 +102,13 @@ public class WorkLogManager {
 
 	public static void main(String[] args) {
 		makeSomeTestData();
+
 		Statistics statistics = new Statistics();
-        statistics.printAvarageTaskDuration();
-        //statistics.printEstimateDurationRation(5);
-        statistics.printAverageCompletedStoriesPerSprint(2);
+		statistics.printAvarageTaskDuration();
+		//statistics.printEstimateDurationRation(5);
+		statistics.printAverageCompletedStoriesPerSprint(2);
 		statistics.printIncompleteTaskForSprint(2);
+
 
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
@@ -175,6 +176,7 @@ public class WorkLogManager {
 					issueDAO.insertEntity(issue);
 					break;
 			}
+
 
 			System.out.println(availEntity);
 			userCmd = promptFor(in, "");
